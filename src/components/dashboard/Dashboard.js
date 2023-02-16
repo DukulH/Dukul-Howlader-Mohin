@@ -5,6 +5,7 @@ import { Avatar, Badge, CardHeader, IconButton } from "@mui/material";
 import profile from "../../assets/profile.jpg";
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import { deepPurple } from "@mui/material/colors";
+import Card from "../card/Card";
 export default function Dashboard() {
   return (
     <div className="Dashboard">
@@ -39,6 +40,13 @@ export default function Dashboard() {
             />
           </div>
         </div>
+      </div>
+
+      <div className="DashboardCardSection">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
       </div>
     </div>
   );
