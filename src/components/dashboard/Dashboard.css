@@ -1,4 +1,26 @@
 .Dashboard{
-    background-color: #EAF0F4;
+    background-color: #f8f9fb;
     width: 100%;
+}
+.DashboardHeader{
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+.DashboardHeaderLeftSection{
+    align-self: center;
+    color: #2D3353;
+    padding-left: 80px;
+}
+.DashboardHeaderRightSection{
+    display: flex;
+    padding-right: 50px;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.DashboardHeaderRightSection input {
+    padding: 10px 60px;
+    border:0px;
+    border-radius: 20px;
 }

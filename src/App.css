@@ -1,8 +1,11 @@
-*{
-  margin:0;
-  padding:0;
+@import url("https://fonts.googleapis.com/css2?family=Dosis&family=Roboto+Condensed&display=swap");
+* {
+  margin: 0;
+  padding: 0;
   text-decoration: none;
+  font-family: "Dosis", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
-.App{
+.App {
   display: flex;
 }
