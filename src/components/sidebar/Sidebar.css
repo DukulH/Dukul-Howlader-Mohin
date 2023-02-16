@@ -1,0 +1,40 @@
+.Sidebar{
+    width: 230px;
+    background-color: white;
+    transition: all .5s;
+    height: 100vh;
+    
+}
+.LogoSection{
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    transition: all 0.5s;
+    margin-bottom: 20px;
+}
+.Logo{
+    font-size: 30px;
+    color:#2D3353;
+}
+.ToggleBar{
+    font-size: 0px;
+    cursor: pointer;
+    display: flex;
+    transition: all 1s;
+    color: #2D3353;
+}
+.NavigationLink{
+    display: flex;
+    gap: 10px;
+    padding: 20px 15px;
+    text-decoration: none;
+    color: #9698b1;
+}
+.NavigationLink:hover{
+    color: #2D3353;
+    transition:.5s;
+    cursor: pointer;
+}
+.active{
+    color: #5730F3;
+}
