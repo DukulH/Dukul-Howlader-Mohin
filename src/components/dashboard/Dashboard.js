@@ -1,12 +1,46 @@
 import React from "react";
 import "./Dashboard.css";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { Avatar, Badge, CardHeader, IconButton } from "@mui/material";
+import { Avatar, Badge, CardHeader } from "@mui/material";
 import profile from "../../assets/profile.jpg";
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-import { deepPurple } from "@mui/material/colors";
 import Card from "../card/Card";
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import StoreIcon from '@mui/icons-material/Store';
 export default function Dashboard() {
+
+  const CARD_DATA = [
+    {
+      name:"Total Sale",
+      icon:<AttachMoneyIcon style={{color:'#fd6a01'}} />,
+      total:"255.55k",
+      background_color_code:'#fef6f0',
+      text_color_code:'#fd6a01'
+    },
+    {
+      name:"Total Order",
+      icon:<LocalMallIcon style={{color:'#6433fe'}}/>,
+      total:"90",
+      background_color_code:'#f0eefe',
+      text_color_code:'#6433fe'
+    },
+    {
+      name:"Total Product",
+      icon:<InventoryIcon style={{color:"#13bcfe"}} />,
+      total:"200",
+      background_color_code:'#e6f8fe',
+      text_color_code:'#13bcfe'
+    },
+    {
+      name:"Total Store",
+      icon:<StoreIcon style={{color:"#fc3361"}}/>,
+      total:"12",
+      background_color_code:'#fceef7',
+      text_color_code:'#fc3361'
+    },
+  ]
   return (
     <div className="Dashboard">
       <div className="DashboardHeader">
@@ -43,10 +77,11 @@ export default function Dashboard() {
       </div>
 
       <div className="DashboardCardSection">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {
+              CARD_DATA.map((card_item, index) => (
+                <Card card_item={card_item} key={index}/>
+              ))
+            }
       </div>
     </div>
   );
