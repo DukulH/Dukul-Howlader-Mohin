@@ -1,4 +1,3 @@
-import MapOutlined from '@mui/icons-material/MapOutlined';
 import React from 'react';
 import './Card.css';
 

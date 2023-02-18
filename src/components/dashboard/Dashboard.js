@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Avatar, Badge, CardHeader } from "@mui/material";
@@ -12,32 +12,39 @@ import StoreIcon from "@mui/icons-material/Store";
 import Footer from "../footer/Footer";
 
 export default function Dashboard() {
+  const [CARD_TOTAL_DATA, SET_CARD_TOTAL_DATA] = useState({})
+
+  useEffect(() => {
+    fetch('http://localhost:8001/cardData')
+    .then(response => response.json())
+    .then(data => SET_CARD_TOTAL_DATA(data))
+  },[])
   const CARD_DATA = [
     {
       name: "Total Sale",
       icon: <AttachMoneyIcon style={{ color: "#fd6a01" }} />,
-      total: "255.55k",
+      total: `${CARD_TOTAL_DATA.order_total__sum /1000}K`,
       background_color_code: "#fef6f0",
       text_color_code: "#fd6a01",
     },
     {
       name: "Total Order",
       icon: <LocalMallIcon style={{ color: "#6433fe" }} />,
-      total: "90",
+      total: CARD_TOTAL_DATA.order_id__count,
       background_color_code: "#f0eefe",
       text_color_code: "#6433fe",
     },
     {
       name: "Total Product",
       icon: <InventoryIcon style={{ color: "#13bcfe" }} />,
-      total: "200",
+      total: CARD_TOTAL_DATA.product_id__count,
       background_color_code: "#e6f8fe",
       text_color_code: "#13bcfe",
     },
     {
       name: "Total Store",
       icon: <StoreIcon style={{ color: "#fc3361" }} />,
-      total: "12",
+      total: CARD_TOTAL_DATA.region_id__count,
       background_color_code: "#fceef7",
       text_color_code: "#fc3361",
     },
