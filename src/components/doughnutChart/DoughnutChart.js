@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import "./BarChart.css";
+import "./DoughnutChart.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export function BarChart() {
+export function DoughnutChart() {
   const [categoryId, SetCategoryId] = useState(1);
-  const [BarChartData, SetBarChartData] = useState({
+  const [DoughnutChartData, SetDoughnutChartData] = useState({
     labels: [],
     datasets: [
       {
@@ -39,7 +39,7 @@ export function BarChart() {
           chartData.push(element.quantity);
         });
         console.log(data)
-        SetBarChartData({
+        SetDoughnutChartData({
           labels: chartLabel,
           datasets: [
             {
@@ -68,7 +68,7 @@ export function BarChart() {
   };
 
   return (
-    <div className="BarChart">
+    <div className="DoughnutChart">
       <strong><p>Category wise sold products and it's quantity</p></strong>
       <select
         name="category"
@@ -85,7 +85,7 @@ export function BarChart() {
         className="d-flex justify-content-center"
         style={{ height: '380px' }}
       >
-      <Doughnut data={BarChartData} />  
+      <Doughnut data={DoughnutChartData} />  
       </div>
     </div>
   );
