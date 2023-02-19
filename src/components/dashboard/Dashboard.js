@@ -13,6 +13,7 @@ import Footer from "../footer/Footer";
 import LineChart from "../lineChart/LineChart";
 import { DoughnutChart } from "../doughnutChart/DoughnutChart";
 import TopProductsTable from "../topProductsTable/TopProductsTable";
+import PieChart from "../pieChart/PieChart";
 
 
 export default function Dashboard() {
@@ -110,7 +111,7 @@ export default function Dashboard() {
           <TopProductsTable />
           </div>
         <div className="ChartRightSection">
-           <DoughnutChart/>
+           <PieChart/>
         </div>
       </div>
       
