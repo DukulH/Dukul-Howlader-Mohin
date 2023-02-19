@@ -38,14 +38,14 @@
     margin: 0 auto;
     height: 500px;
     display:flex;
-    margin-top: 40px;
+    margin-top: 20px;
   
 }
 .ChartLeftSection{
     width: 65%;
     background-color: #fefffe;
     border-radius: 15px;
-    margin-right: 20px;
+    margin-right: 10px;
     height: 500px;
 }
 .ChartRightSection{

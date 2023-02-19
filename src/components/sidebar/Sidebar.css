@@ -3,7 +3,7 @@
     width: 230px;
     background-color: #fefffe;
     transition: all .5s;
-    height: 100vh;
+    min-height: 100vh;
     
 }
 .LogoSection{

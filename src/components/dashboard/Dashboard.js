@@ -93,6 +93,7 @@ export default function Dashboard() {
           <Card card_item={card_item} key={index} />
         ))}
       </div>
+
       <div className="ChartSection">
         <div className="ChartLeftSection">
           <LineChart />
@@ -101,7 +102,17 @@ export default function Dashboard() {
            <BarChart />
         </div>
       </div>
-      <Footer />
+      
+      <div className="ChartSection">
+        <div className="ChartLeftSection">
+          <LineChart />
+          </div>
+        <div className="ChartRightSection">
+           <BarChart />
+        </div>
+      </div>
+      
+      {/* <Footer /> */}
     </div>
   );
 }
