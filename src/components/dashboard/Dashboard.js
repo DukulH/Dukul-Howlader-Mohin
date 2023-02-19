@@ -10,20 +10,23 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import StoreIcon from "@mui/icons-material/Store";
 import Footer from "../footer/Footer";
+import LineChart from "../lineChart/LineChart";
 
 export default function Dashboard() {
-  const [CARD_TOTAL_DATA, SET_CARD_TOTAL_DATA] = useState({})
+  const [CARD_TOTAL_DATA, SET_CARD_TOTAL_DATA] = useState({});
+
+
 
   useEffect(() => {
-    fetch('http://localhost:8001/cardData')
-    .then(response => response.json())
-    .then(data => SET_CARD_TOTAL_DATA(data))
-  },[])
+    fetch("http://localhost:8001/cardData")
+      .then((response) => response.json())
+      .then((data) => SET_CARD_TOTAL_DATA(data));
+  }, []);
   const CARD_DATA = [
     {
       name: "Total Sale",
       icon: <AttachMoneyIcon style={{ color: "#fd6a01" }} />,
-      total: `${CARD_TOTAL_DATA.order_total__sum /1000}K`,
+      total: `${CARD_TOTAL_DATA.order_total__sum / 1000}K`,
       background_color_code: "#fef6f0",
       text_color_code: "#fd6a01",
     },
@@ -89,7 +92,7 @@ export default function Dashboard() {
           <Card card_item={card_item} key={index} />
         ))}
       </div>
-
+      <LineChart />
       <Footer />
     </div>
   );
