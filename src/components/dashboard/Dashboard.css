@@ -46,10 +46,12 @@
     background-color: #fefffe;
     border-radius: 15px;
     margin-right: 20px;
+    height: 500px;
 }
 .ChartRightSection{
     width: 35%;
     border-radius: 15px;
     margin-left: 10px;
     background-color: #fefffe;
+    height: 500px;
 }

@@ -1,0 +1,17 @@
+.BarChart {
+  margin: 20px;
+}
+.CategorySelect {
+  width: 160px;
+  padding: 8px 15px;
+  color: #2d3353;
+  border: 0.5 solid #1a2459;
+  background-color: white;
+}
+.CategorySelect option {
+  color: #2d3353;
+}
+
+.CategorySelect:focus {
+  outline: none !important;
+}
