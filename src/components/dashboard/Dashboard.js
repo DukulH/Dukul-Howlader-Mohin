@@ -11,6 +11,7 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import StoreIcon from "@mui/icons-material/Store";
 import Footer from "../footer/Footer";
 import LineChart from "../lineChart/LineChart";
+import { BarChart } from "../barChart/BarChart";
 
 export default function Dashboard() {
   const [CARD_TOTAL_DATA, SET_CARD_TOTAL_DATA] = useState({});
@@ -92,7 +93,14 @@ export default function Dashboard() {
           <Card card_item={card_item} key={index} />
         ))}
       </div>
-      <LineChart />
+      <div className="ChartSection">
+        <div className="ChartLeftSection">
+          <LineChart />
+          </div>
+        <div className="ChartRightSection">
+           <BarChart />
+        </div>
+      </div>
       <Footer />
     </div>
   );

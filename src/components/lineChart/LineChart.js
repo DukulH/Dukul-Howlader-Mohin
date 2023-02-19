@@ -60,10 +60,30 @@ export default function LineChart() {
       ],
     },
   };
+
   return (
-    <div>
-        
-        <HighchartsReact highcharts={Highcharts} options={options} />
+    <div className="LineChart">
+      <div
+        style={{
+          display: "flex",
+          justifyContent:'space-between',
+          alignItems: "center",
+        }}
+      >
+        <div>
+          <select name="region" id="region" className="RegionSelect">
+            <option value="">Select Region</option>
+            <option value="1">Mirpur</option>
+            <option value="2">Dhanmondi</option>
+            <option value="3">Gulshan</option>
+          </select>
+        </div>
+        <div>
+          {/* <label htmlFor="dateInput">Select Date: </label> */}
+          <input name="dateInput" className="DateInput" type="date" />
+        </div>
       </div>
+      <HighchartsReact highcharts={Highcharts} options={options} />
+    </div>
   );
 }

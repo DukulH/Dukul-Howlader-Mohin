@@ -27,9 +27,29 @@
 .DashboardCardSection{
     background-color: #fefffe;
     height: 180px;
-    margin-left: 70px;
+    margin-left: 60px;
     margin-right: 60px;
     border-radius: 15px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+}
+.ChartSection{
+    width: 93%;
+    margin: 0 auto;
+    height: 500px;
+    display:flex;
+    margin-top: 40px;
+  
+}
+.ChartLeftSection{
+    width: 65%;
+    background-color: #fefffe;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+.ChartRightSection{
+    width: 35%;
+    border-radius: 15px;
+    margin-left: 10px;
+    background-color: #fefffe;
 }

@@ -1,0 +1,21 @@
+.LineChart{
+margin: 20px;
+}
+.RegionSelect{
+width: 150px;
+padding: 8px 15px; 
+color: #2D3353;
+border: .5 solid #1a2459;
+background-color: white;
+}
+.RegionSelect option{
+    color: #2D3353;
+}
+.DateInput{
+width: 150px;
+padding: 8px 15px; 
+color: #2D3353;
+}
+.RegionSelect .DateInput:focus { 
+    outline: none !important;
+ }
