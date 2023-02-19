@@ -105,7 +105,7 @@ export default function Dashboard() {
         </div>
       </div>
       
-      <div className="ChartSection">
+      <div className="ChartSection mb-5">
         <div className="ChartLeftSection">
           <TopProductsTable />
           </div>
