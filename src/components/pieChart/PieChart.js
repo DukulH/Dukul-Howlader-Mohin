@@ -24,8 +24,8 @@ export default function PieChart() {
         fetch('http://localhost:8001/topCustomerData')
           .then((response) => response.json())
           .then((data) => {
-            const chartLabel = [];
-            const chartData = [];
+            const chartLabel = []; // creating empty array to pie chart labels
+            const chartData = []; // creating empty array to pie chart data
             data.forEach((element) => {
               chartLabel.push(element.customer_name);
               chartData.push(element.order_total_amount);

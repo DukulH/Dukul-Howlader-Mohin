@@ -5,6 +5,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 export default function TopProductsTable() {
   const [Top_Product_Data, Set_Top_Product_Data] = useState([]);
 
+  //fetching top products data from database based on selling quantity
   useEffect(() => {
     fetch("http://localhost:8001/topProductData")
       .then((response) => response.json())

@@ -58,12 +58,12 @@ export default function LineChart() {
       })
         .then((response) => response.json())
         .then((data) => {
-          const seriesData = [];
-          const xAxisCategoryData = [];
+          const seriesData = []; //creating empty array to push total sales data
+          const xAxisCategoryData = []; //creating empty array for push line chart x axis data
           data.forEach((element) => {
             let dateFormate = new Date(element.order_date);
             xAxisCategoryData.push(
-              dateFormate.toLocaleString("default", {
+              dateFormate.toLocaleString("default", {  //convert date into day and month name. Example:'2023-1-1 into 1 jan'
                 day: "numeric",
                 month: "short",
               })

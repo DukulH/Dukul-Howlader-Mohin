@@ -15,17 +15,17 @@ import { DoughnutChart } from "../doughnutChart/DoughnutChart";
 import TopProductsTable from "../topProductsTable/TopProductsTable";
 import PieChart from "../pieChart/PieChart";
 
-
 export default function Dashboard() {
   const [CARD_TOTAL_DATA, SET_CARD_TOTAL_DATA] = useState({});
 
-
-
+  // Fetching total sales, total orders, total products and total store data from database
   useEffect(() => {
     fetch("http://localhost:8001/cardData")
       .then((response) => response.json())
       .then((data) => SET_CARD_TOTAL_DATA(data));
   }, []);
+
+  
   const CARD_DATA = [
     {
       name: "Total Sale",
@@ -100,21 +100,21 @@ export default function Dashboard() {
       <div className="ChartSection">
         <div className="ChartLeftSection">
           <LineChart />
-          </div>
+        </div>
         <div className="ChartRightSection">
-           <DoughnutChart />
+          <DoughnutChart />
         </div>
       </div>
-      
+
       <div className="ChartSection mb-5">
         <div className="ChartLeftSection">
           <TopProductsTable />
-          </div>
+        </div>
         <div className="ChartRightSection">
-           <PieChart/>
+          <PieChart />
         </div>
       </div>
-        <Footer/>
+      <Footer />
     </div>
   );
 }

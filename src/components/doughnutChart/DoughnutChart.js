@@ -32,8 +32,8 @@ export function DoughnutChart() {
     fetch(`http://localhost:8001/categoryWiseData/${categoryId}`)
       .then((response) => response.json())
       .then((data) => {
-        const chartLabel = [];
-        const chartData = [];
+        const chartLabel = []; // creating empty array to doughnut chart labels
+        const chartData = []; // creating empty array to doughnut chart data
         data.forEach((element) => {
           chartLabel.push(element.product_name);
           chartData.push(element.quantity);
