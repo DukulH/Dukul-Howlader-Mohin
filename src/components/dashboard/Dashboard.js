@@ -114,8 +114,7 @@ export default function Dashboard() {
            <PieChart/>
         </div>
       </div>
-      
-      {/* <Footer /> */}
+        <Footer/>
     </div>
   );
 }
