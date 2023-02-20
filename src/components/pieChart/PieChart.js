@@ -48,8 +48,8 @@ export default function PieChart() {
           .catch(error => console.log(error))
       }, []);
   return (
-    <div className="DoughnutChart">
-    <strong><p>Category wise sold products and it's quantity</p></strong>
+    <div className="PieChart">
+    <strong><p>Top Customers</p></strong>
     <div
       className="d-flex justify-content-center"
       style={{ height: '380px' }}

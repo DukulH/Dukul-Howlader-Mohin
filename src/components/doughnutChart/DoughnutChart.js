@@ -38,7 +38,6 @@ export function DoughnutChart() {
           chartLabel.push(element.product_name);
           chartData.push(element.quantity);
         });
-        console.log(data)
         SetDoughnutChartData({
           labels: chartLabel,
           datasets: [
