@@ -143,7 +143,7 @@ export default function LineChart() {
       </div>
 
       {showLoader ? (
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mt-5">
           <RingLoader
             loading={showLoader}
             aria-label="Loading Spinner"
