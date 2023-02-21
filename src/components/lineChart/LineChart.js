@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./LineChart.css";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import RingLoader from "react-spinners/RingLoader";
 
 export default function LineChart() {
   const [RegionID, SetRegionID] = useState(0);
+  const [showLoader, setShowLoader] = useState(false);
   const [DateRange, SetDateRange] = useState({
     startDate: "2023-01-01",
     endDate: "2023-02-20",
@@ -49,13 +51,17 @@ export default function LineChart() {
 
   useEffect(() => {
     if (DateRange.startDate && DateRange.endDate !== "") {
-      fetch(`http://localhost:8001/regionAndDateWiseData/${RegionID}/`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(DateRange),
-      })
+      setShowLoader(true);
+      fetch(
+        `https://agrigate-service.onrender.com/regionAndDateWiseData/${RegionID}/`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(DateRange),
+        }
+      )
         .then((response) => response.json())
         .then((data) => {
           const seriesData = []; //creating empty array to push total sales data
@@ -63,7 +69,8 @@ export default function LineChart() {
           data.forEach((element) => {
             let dateFormate = new Date(element.order_date);
             xAxisCategoryData.push(
-              dateFormate.toLocaleString("default", {  //convert date into day and month name. Example:'2023-1-1 into 1 jan'
+              dateFormate.toLocaleString("default", {
+                //convert date into day and month name. Example:'2023-1-1 into 1 jan'
                 day: "numeric",
                 month: "short",
               })
@@ -87,6 +94,7 @@ export default function LineChart() {
               },
             ],
           });
+          setShowLoader(false);
         });
     }
   }, [RegionID, DateRange]);
@@ -133,7 +141,17 @@ export default function LineChart() {
           />
         </div>
       </div>
-      <HighchartsReact highcharts={Highcharts} options={LineChartData} />
+
+      {showLoader ? (
+        <div className="d-flex justify-content-center">
+          <RingLoader
+            loading={showLoader}
+            aria-label="Loading Spinner"
+          />
+        </div>
+      ) : (
+        <HighchartsReact highcharts={Highcharts} options={LineChartData} />
+      )}
     </div>
   );
 }

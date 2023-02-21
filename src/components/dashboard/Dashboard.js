@@ -20,7 +20,7 @@ export default function Dashboard() {
 
   // Fetching total sales, total orders, total products and total store data from database
   useEffect(() => {
-    fetch("http://localhost:8001/cardData")
+    fetch("https://agrigate-service.onrender.com/cardData")
       .then((response) => response.json())
       .then((data) => SET_CARD_TOTAL_DATA(data));
   }, []);
